@@ -1,9 +1,12 @@
+/* 0-putchar.c - a program that prints "_putchar" followed by a new line */
 #include "main.h"
 #include <stdio.h>
 /**
- * This program prints "_putchar" followed by a new line.
+ * main - Entry point for the program
  *
- * @return 0 indicating success
+ * This function prints "_putchar" followed by a new line.
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
