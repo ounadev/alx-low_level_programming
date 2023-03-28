@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-
-#define PASSWORD_LENGTH 8
 char* generate_password() {
     char* password = malloc(sizeof(char) * PASSWORD_LENGTH + 1);
     const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.-#'?!";
