@@ -12,8 +12,6 @@ void puts2(char *str);
 void puts_half(char *str);
 void print_array(int *a, int n);
 int _atoi(char *s);
-#define PASSWORD_LENGTH 16
-//char* generate_password();
 void generate_password(char *password);
 #endif /* MAIN_H */
 
