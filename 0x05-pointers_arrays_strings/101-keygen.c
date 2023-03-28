@@ -1,32 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <time.h>
 #include "main.h"
 
-int main(int argc, char **argv)
-{
-    char *password = generate_password();
-
-    printf("Generated password: %s\n", password);
-
-    free(password);
-    return 0;
-}
-
-char *generate_password(void)
-{
-    char *password = malloc(PASSWORD_LENGTH + 1);
-
+char *generate_password(void) {
+    char *password = malloc(sizeof(char) * (PASSWORD_LENGTH + 1));
     if (password == NULL) {
         fprintf(stderr, "Failed to allocate memory for password\n");
-        exit(EXIT_FAILURE);
+        exit(1);
     }
 
+    const char charset[] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const int charset_length = sizeof(charset) - 1;
+    srand(time(NULL));
     for (int i = 0; i < PASSWORD_LENGTH; i++) {
-        password[i] = rand() % 26 + 'a';
+        password[i] = charset[rand() % charset_length];
     }
-
     password[PASSWORD_LENGTH] = '\0';
 
     return password;
+}
+
+int main(void) {
+    char *password = generate_password();
+    printf("Generated password: %s\n", password);
+    free(password);
+    return 0;
 }
