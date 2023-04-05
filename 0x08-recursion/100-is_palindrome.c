@@ -1,23 +1,5 @@
 #include "main.h"
-
-/**
- * is_palindrome - checks if a string is a palindrome
- * @s: the string to check
- *
- * Return: 1 if s is a palindrome, 0 otherwise
- */
-int is_palindrome(char *s)
-{
-    int len;
-
-    /* Find length of string */
-    for (len = 0; s[len]; len++)
-        ;
-
-    /* Recursive helper function */
-    return is_palindrome_helper(s, len);
-}
-
+#include <stdio.h>
 /**
  * is_palindrome_helper - helper function for is_palindrome
  * @s: the string to check
@@ -38,3 +20,21 @@ int is_palindrome_helper(char *s, int len)
     /* Recursively check substring between first and last characters */
     return is_palindrome_helper(s + 1, len - 2);
 }
+/**
+ * is_palindrome - checks if a string is a palindrome
+ * @s: the string to check
+ *
+ * Return: 1 if s is a palindrome, 0 otherwise
+ */
+int is_palindrome(char *s)
+{
+    int len;
+
+    /* Find length of string */
+    for (len = 0; s[len]; len++)
+        ;
+
+    /* Recursive helper function */
+    return is_palindrome_helper(s, len);
+}
+
