@@ -9,13 +9,13 @@
  */
 int is_prime(int n, int div)
 {
-    if (n < 2)
-        return (0);
-    if (div == n)
-        return (1);
-    if (n % div == 0)
-        return (0);
-    return (is_prime(n, div + 1));
+if (n < 2)
+	return (0);
+if (div == n)
+	return (1);
+if (n % div == 0)
+	return (0);
+return (is_prime(n, div + 1));
 }
 
 /**
