@@ -1,5 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+/**
+ * calculate_coins - calculates the minimum number of coins
+ * @cents: amount of cents to make change for
+ *
+ * Return: the minimum number of coins
+ */
 int main(int argc, char *argv[])
 {
 int cents, coins = 0;
